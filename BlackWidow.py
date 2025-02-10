@@ -1,19 +1,25 @@
+# Print a decorative line for better output formatting
 print("\n***************************************************\n")
 
+# Display program title and developer name
 print("Weather Branch - Developer: Noah Engelsma\n")
 
-#Import Libaries Here!
-import random
-from time import sleep
+# Import necessary libraries
+import random  # Used to randomly select weather conditions
+from time import sleep  # (Not used in this program but could be for delays)
 
-#Weather function to determine the weather
+# Function to randomly determine the weather condition
 def weather():
+    # List of possible weather conditions
     weatherForecastList = ["snowing", "blizzard", "icy", "rainy", "windy", "sunny"]
+    # Randomly select a weather condition from the list
     weatherCondition = random.choice(weatherForecastList)
-    return weatherCondition
+    return weatherCondition  # Return the selected weather condition
 
+# Call the weather function to get the current weather alert
 weatherAlert = weather()
 
+# Function to determine the vehicle response based on the weather condition
 def vehicleResponseSystem():
     if weatherAlert == "snowing":
         print("The National Weather Service has updated your alarm by 30 minutes because"
@@ -32,7 +38,10 @@ def vehicleResponseSystem():
         " it is", weatherAlert, "outside!")
     else:
         print("The National Weather Service is calling"
-        " for", weatherAlert, "skys have a good day!")
-    
+        " for", weatherAlert, "skies. Have a good day!")
 
-vehicleResponseSystem()    
+# Call the vehicleResponseSystem function to display the alert message
+vehicleResponseSystem()  
+
+# Print a closing decorative line for better output formatting
+print("\n***************************************************\n")
