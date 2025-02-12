@@ -28,7 +28,7 @@ def vehicle_response_system(weather_alert):
         print(
             f"The National Weather Service has updated your alarm by {delay} minutes because it is {weather_alert} outside.")
         sleep(1)
-        print(f"VRS has been engaged only allowing us to drive {speed}MPH.")
+        print(f"\nVRS has been engaged only allowing us to drive {speed}MPH.")
     else:
         print(f"The National Weather Service is calling for {weather_alert} skies. Have a good day!")
         sleep(1)
