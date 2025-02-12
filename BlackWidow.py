@@ -1,6 +1,9 @@
 # Import necessary libraries
 import sys
 import time
+import random  
+from time import sleep 
+
 
 # Define ANSI escape codes for colors
 CYAN = "\033[96m"  # Light Cyan for the developer message
@@ -38,9 +41,10 @@ while x != 20:
     # Once the loop reaches 20 iterations, print the final success message
     if x == 20:
         print(GREEN + "\n\nOperating System Booted Up - Retina Scanned - " 
-              + LIGHT_GREEN + "Access Granted\n" + RESET)
-import random  # For random weather selection
-from time import sleep  # For potential delays
+              + LIGHT_GREEN + "Access Granted" + RESET)
+
+
+
 
 # Print a decorative line for better output formatting
 def print_separator():
@@ -67,13 +71,13 @@ def vehicle_response_system(weather_alert):
     if weather_alert in responses:
         delay, speed = responses[weather_alert]
         print(
-            f"The National Weather Service has updated your alarm by {delay} minutes because it is {weather_alert} outside.")
+            f"The National Weather Service has updated your alarm by {delay} minutes because it is {weather_alert} outside.\n")
         sleep(1)
         print(f"VRS has been engaged only allowing us to drive {speed}MPH.")
     else:
         print(f"The National Weather Service is calling for {weather_alert} skies. Have a good day!")
         sleep(1)
-        print("VRS has been disengaged.")
+        print("\nVRS has been disengaged.")
 
 # Main program execution
 if __name__ == "__main__":
