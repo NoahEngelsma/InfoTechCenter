@@ -32,6 +32,6 @@ def gasLevelAlert():
         print("***WARNING YOU ARE ON A HALF TANK OF GAS***\n")
     elif gasLevelIndicator == "Three Quarter Tank":
         print("***WARNING YOU ARE ON A THREE QUARTER TANK OF GAS***\n")
-    else :print("***WARNING YOU HAVE A FULL TANK OF GAS*** Vroom Vroom!\n")
+    else: print("***WARNING YOU HAVE A FULL TANK OF GAS*** Vroom Vroom!\n")
 
 gasLevelAlert()
