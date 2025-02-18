@@ -1,37 +1,31 @@
-print("\n***************************************\n")
-print("Gasoline Branch - Developer: Noah Engelsma\n")
-
 import random
 from time import sleep
+print("***********************************************\n")
 
-def gasLevelGauge():
-  gasLevelList = ["Empty", "Low", "Quarter", "Half", "Three Quarter", "Full"]
-  return random.choice(gasLevelList)
+def gas_level_gauge():
+    return random.choice(["Empty", "Low", "Quarter", "Half", "Three Quarter", "Full"])
 
-def gasStations():
-        gasStationsList = ["Shell", "Marathon", "Speedway", "Circle K", "Wesco", "7/11", "Meijer", "Buc-ees"]
-        return random.choice(gasStationsList)
 
-def gasLevelAlert():
-    milesToGasStationLow = round(random.uniform(1,25),1)
-    milesToGasStationQuarterTank = round(random.uniform(25.1,50),1)
-    gasLevelIndicator = gasLevelGauge()
-    if gasLevelIndicator == "Empty":
-        print("***WARNING YOU ARE OUT OF GAS***\n")
-        sleep(1.25)
-        print("Calling AAA")
-    elif gasLevelIndicator == "Low":
-        print("***WARNING YOU ARE LOW ON GAS CHECKING GPS FOR CLOSEST GAS STATION***\n")
-        sleep(1.25)
-        print("The closest Gas Station is", gasStations(), "which is", milesToGasStationLow, "miles away.\n")
-    elif gasLevelIndicator == "Quarter":
-        print("***WARNING YOU ARE ALMOST OUT OF GAS CHECKING FOR CLOSEST GAS STATION***\n")
-        sleep(1.25)
-        print("The closest Gas Station is", gasStations(), "which is", milesToGasStationQuarterTank, "miles away.\n")
-    elif gasLevelIndicator == "Half Tank":
-        print("***WARNING YOU ARE ON A HALF TANK OF GAS***\n")
-    elif gasLevelIndicator == "Three Quarter Tank":
-        print("***WARNING YOU ARE ON A THREE QUARTER TANK OF GAS***\n")
-    else: print("***WARNING YOU HAVE A FULL TANK OF GAS*** Vroom Vroom!\n")
+def gas_stations():
+    return random.choice(["Shell", "Marathon", "Speedway", "Circle K", "Wesco", "7/11", "Meijer", "Buc-ees"])
 
-gasLevelAlert()
+
+def gas_level_alert():
+    gas_level = gas_level_gauge()
+    gas_messages = {
+        "Empty": "***WARNING YOU ARE OUT OF GAS***\nCalling AAA...",
+        "Low": "***WARNING YOU ARE LOW ON GAS CHECKING GPS FOR CLOSEST GAS STATION***\n",
+        "Quarter": "***WARNING YOU ARE ALMOST OUT OF GAS CHECKING FOR CLOSEST GAS STATION***\n",
+        "Half": "You are at half tank, consider refueling soon.",
+        "Three Quarter": "You have a three-quarter tank of gas.",
+        "Full": "***YOU HAVE A FULL TANK OF GAS*** Vroom Vroom!"
+    }
+
+    print(gas_messages[gas_level])
+
+    if gas_level in ["Low", "Quarter"]:
+        miles_to_station = round(random.uniform(1, 50) if gas_level == "Low" else random.uniform(25.1, 50), 1)
+        print(f"The closest Gas Station is {gas_stations()}, which is {miles_to_station} miles away.\n")
+
+
+gas_level_alert()
