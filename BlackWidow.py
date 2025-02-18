@@ -1,6 +1,7 @@
 import random
 from time import sleep
 print("***********************************************\n")
+print("Developer: Noah Engelsma")
 
 def gas_level_gauge():
     return random.choice(["Empty", "Low", "Quarter", "Half", "Three Quarter", "Full"])
