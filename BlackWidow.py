@@ -41,7 +41,7 @@ while x != 20:
     # Once the loop reaches 20 iterations, print the final success message
     if x == 20:
         print(GREEN + "\n\nOperating System Booted Up - Retina Scanned - " 
-              + LIGHT_GREEN + "Access Granted" + RESET)
+              + LIGHT_GREEN + "Access Granted\n" + RESET)
 
 
 
